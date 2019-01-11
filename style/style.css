@@ -1,0 +1,127 @@
+body {
+  margin : 0;
+}
+
+header {
+  margin-bottom: -4px;
+}
+
+img#banniere {
+  margin: 0;
+}
+
+nav {
+  background-color: black;
+  height: 55px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav div {
+  width: 120px;
+  margin: 0;
+  height: 55px;
+}
+nav div a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav div:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+nav div:hover > a {
+  color: black;
+  transition: 0.8s;
+}
+
+#jeu {
+  width: 100%;
+  margin: 0 auto;
+  padding : 40px 0;
+  background-color: white; //rgb(220, 255,200);
+}
+
+#options {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: 'Indie Flower', cursive;
+}
+
+#milieu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#tours, #chrono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5px 20px;
+  margin: 20px;
+  width: 10%;
+  background-color: rgb(255, 216, 151);
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: "Impact";
+}
+
+#chrono div {
+  margin: 0;
+}
+
+#m, #s, #cs {
+  text-align: center;
+  width: 30px;
+}
+
+#plateau {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  padding: 5px;
+  background-color: rgb(200, 200, 255);
+  border: solid 2px;
+}
+
+#boutons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#boutons button {
+  margin: 0px 30px;
+}
+
+.ligne {
+  display: flex;
+  flex-direction: row;
+}
+
+.carte img {
+  margin: 5px;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+  -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+  user-select: none; /* Propriété standard */
+
+  /* transition: 2s; */
+}

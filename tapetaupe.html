@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content="">
+  <meta name="keywords" content="mini-jeu, jeu memory">
+  <meta name="author" content="Lauriane FELS">
+  <meta content="text/html;charset=UTF-8" http-equiv="contenttype"> <!-- Firefox -->
+  <meta charset="utf-8"/> <!-- Chrome -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="style/style.css" media="all" rel="stylesheet" type="text/css"/>
+	<title>Jeu du tape-taupe</title>
+</head>
+
+<body>
+  <header>
+    <img id="banniere" src="media/images/banniere.png" alt="" height="auto" width="100%">
+  </header>
+  <nav>
+    <div><a href="index.html">Accueil</a></div>
+    <div><a href="memory.html">Memory</a></div>
+    <div><a href="tapetaupe.html">Tape-taupe</a></div>
+    <div><a href="index.html">Pendu</a></div>
+    <div><a href="index.html">Le projet</a></div>
+    <div><a href="index.html">Contact</a></div>
+  </nav>
+
+  <div id="jeu">
+    <div id="options">
+      <div>
+        Nombre de lignes :
+        <select id="nbLignes">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+      <div>
+        Nombre de colonnes :
+        <select id="nbColonnes">
+          <option value="2">2</option>
+          <option value="4" selected>4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+
+      <div>
+        Thème :
+        <select id="theme">
+          <option disabled>Pokémons</option>
+          <option value="1" selected>Starter</option>
+          <option value="2">Starter +</option>
+          <option value="3">Starter évo</option>
+          <option value="4">Évoli</option>
+          <option value="5">Légendaires</option>
+          <option disabled>Autres jeux</option>
+          <option value="6">Ratchet et Clank</option>
+          <option value="7">Jak et Daxter</option>
+          <option value="8">Mario</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="milieu">
+      <div id="chrono">
+        <div id="m">00</div><div>:</div><div id="s">00</div><div>:</div><div id="cs">00</div>
+      </div>
+      <div id="plateau">
+
+      </div>
+      <div id="tours">
+        0
+      </div>
+    </div>
+
+
+
+    <div id="boutons">
+      <button type="button" onclick="jouer(imgPerTheme)" id="bJouer"> Jouer </button>
+      <button type="button" onclick="abandonner(imgPerTheme)" id="bAbandonner"> Abdandonner </button>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="script/jquery.min.js"></script>
+  <script type="text/javascript" src="script/script2.js"></script>
+</body>
+
+</html>
