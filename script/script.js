@@ -10,6 +10,7 @@ var couple;
 var retourne;
 var jeu = 0;
 var compteur;
+var bufCarte;
 
 
 /*
@@ -224,7 +225,13 @@ function retourneCarte() {
 
   $(".carte img").unbind("click");
 
-  carte.attr("src", adresseMedia(theme, couple));
+  $(".carte img").css('transition','0.3s');
+  carte.css('transform','rotateY(90deg)');
+  setTimeout(function(){
+    carte.attr("src", adresseMedia(theme, couple));
+    carte.css('transform','rotateY(180deg)');
+  }, 400);
+
 
   if (retourne == couple)
   {
@@ -237,22 +244,28 @@ function retourneCarte() {
     }, 500);
   }
   else if (retourne != 0){
-    var class1 = ".carte img." + couple;
-    var class2 = ".carte img." + retourne;
     setTimeout(function(){
-      $(class1).attr("src", adresseMedia(theme, 0, 1));
-      $(class2).attr("src", adresseMedia(theme, 0, 1));
-    }, 800);
+      $(".carte img").css('transition', '0.1s');
+      carte.css('transform','rotateY(90deg)');
+      bufCarte.css('transform','rotateY(90deg)');
+      setTimeout(function(){
+        carte.attr("src", adresseMedia(theme, 0, 1));
+        bufCarte.attr("src", adresseMedia(theme, 0, 1));
+        carte.css('transform','rotateY(180deg)');
+        bufCarte.css('transform','rotateY(180deg)');
+      }, 200);
+    }, 1400);
     $("#tours").text(parseInt($("#tours").text())+1);
     retourne = 0;
     setTimeout(function(){
       $(".carte img").not($(".found")).click(retourneCarte);
-    }, 500);
+    }, 1500);
   }
   else if (retourne == 0) {
     retourne = couple;
     $(".carte img").not($(".found, .retourned")).click(retourneCarte);
     carte.unbind("click");
+    bufCarte = carte;
   }
 
   if ($(".carte img.found").length == nbCartes) {
